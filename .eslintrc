@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "parser": "babel-eslint",
   "plugins": [
     "flowtype",
@@ -22,10 +21,3 @@
   },
   "extends": ["standard", "standard-react", "plugin:flowtype/recommended"]
 }
-=======
-    "rules": {
-        "semi": ["error", "always"],
-        "quotes": ["error", "double"]
-    }
-}
->>>>>>> message
