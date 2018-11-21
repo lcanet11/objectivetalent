@@ -13,7 +13,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "eslint": "eslint --init"
+    "eslint": "eslint --fix"
   },
   "browserslist": [
     ">0.2%",
@@ -27,6 +27,11 @@
   "pre-commit": [
     "lint-staged"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "*.js": [
       "eslint --fix",
@@ -51,9 +56,10 @@
     "eslint-plugin-standard": "^4.0.0",
     "flow-bin": "^0.81.0",
     "flow-coverage-report": "^0.6.0",
+    "husky": "^1.2.0",
     "jest": "^23.6.0",
     "jest-styled-components": "^6.2.0",
-    "lint-staged": "^7.2.2",
+    "lint-staged": "^7.3.0",
     "pre-commit": "^1.2.2",
     "react-addons-css-transition-group": "^15.6.2"
   }
