@@ -1,11 +1,11 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 export default class Post extends Component {
-    render(){
-        return (
-            <div>
+  render () {
+    return (
+      <div>
                 POST
-            </div>
-        )
-    }
+      </div>
+    )
+  }
 }

@@ -1,11 +1,11 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 export default class About extends Component {
-    render(){
-        return (
-            <div>
+  render () {
+    return (
+      <div>
                 ABOUT
-            </div>
-        )
-    }
+      </div>
+    )
+  }
 }
