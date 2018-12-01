@@ -1,11 +1,9 @@
 import React from 'react'
 import { Navbar, Nav, NavItem, MenuItem, NavDropdown } from 'react-bootstrap'
 import PropTypes from 'prop-types'
+// import 'NavbarPage.css'
 
 class NavbarPage extends React.Component {
-  componentDidMount () {
-    console.log(this.props)
-  }
   render () {
     return (
       <div>
@@ -16,18 +14,18 @@ class NavbarPage extends React.Component {
             </Navbar.Brand>
           </Navbar.Header>
           <Nav>
-            <NavItem eventKey={1} href='#'>
+            <NavItem eventKey={1} href='Jobs'>
       Jobs
             </NavItem>
-            <NavItem eventKey={2} href='#'>
+            <NavItem eventKey={2} href='Post'>
       Post
             </NavItem>
             <NavDropdown eventKey={3} title='Dropdown' id='basic-nav-dropdown'>
-              <MenuItem eventKey={3.1}>Search for a Job</MenuItem>
-              <MenuItem eventKey={3.2}>Post a Job</MenuItem>
-              <MenuItem eventKey={3.3}>Our Events</MenuItem>
+              <MenuItem eventKey={3.1} href='Jobs'>Search for a job</MenuItem>
+              <MenuItem eventKey={3.2} href='Post'>Post a Job</MenuItem>
+              <MenuItem eventKey={3.3} href='Events'>Our Events</MenuItem>
               <MenuItem divider />
-              <MenuItem eventKey={3.4} href='/about'>About Us</MenuItem>
+              <MenuItem eventKey={3.4} href='About'>About Us</MenuItem>
             </NavDropdown>
           </Nav>
         </Navbar>

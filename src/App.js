@@ -1,18 +1,19 @@
 
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Router, Route } from 'react-router-dom'
 import Navbar from './NavbarPage'
 import history from './history'
-import { Jobs, Post, About } from './components'
+import { Jobs, Post, About, Events } from './components'
 
 function App () {
   return (
     <Router history={history}>
       <div>
         <Navbar>
-          <Route exact path='/' component={Jobs} />
-          <Route path='/about' component={About} />
-          <Route path='/post' component={Post} />
+          <Route exact path='/jobs' component={Jobs} />
+          <Route exact path='/about' component={About} />
+          <Route exact path='/post' component={Post} />
+          <Route exact path='/events' component={Events} />
         </Navbar>
       </div>
     </Router>

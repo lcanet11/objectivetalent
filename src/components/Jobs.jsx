@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Jumbotron, Grid, Row, Col, Image, Button } from 'react-bootstrap'
-// import 'Jobs.css';
+import getJobs from '../api/'
 
 export default class Jobs extends Component {
+  async componentDidMount () {
+    console.log('inside componentdidmount')
+    const jobs = await getJobs()
+  }
   render () {
     return (
       <Grid>
@@ -13,8 +17,8 @@ export default class Jobs extends Component {
         </Jumbotron>
         <Link to='/about'>
           <Button bsStyle='primary'>About</Button>
-
         </Link>
+
       </Grid>
     )
   }
