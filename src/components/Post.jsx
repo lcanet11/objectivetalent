@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-//import 'Post.css'
+import './Post.css'
 
 export default class Post extends Component {
   render () {
     return (
-      <div>
+      <div class='col'>
                 POST
       </div>
     )

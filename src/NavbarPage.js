@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navbar, Nav, NavItem, MenuItem, NavDropdown } from 'react-bootstrap'
 import PropTypes from 'prop-types'
-// import 'NavbarPage.css'
+import './NavbarPage.css'
 
 class NavbarPage extends React.Component {
   render () {

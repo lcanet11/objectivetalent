@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-//import 'Events.css'
+import './Events.css'
 
 export default class Events extends Component {
   render () {
     return (
-      <div>
-               EVENTS
+      <div className='.col'>
+               Coming Soon!
       </div>
     )
   }
