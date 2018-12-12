@@ -1,0 +1,29 @@
+@keyframes comeIn {
+    0% { transform: scale(0) }
+    75% { transform: scale(1.03) }
+    100% { transform: scale(1) }
+}
+
+.xmasonry .xblock {
+    animation: comeIn ease 0.5s;
+    animation-iteration-count: 1;
+    transition: left .3s ease, top .3s ease;
+}
+
+.card {
+    margin: 7px;
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px darkgray;
+}
+.card2 {
+    margin: 7px;
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px darkgray;
+    min-height: 360px;
+    font-family: 'Segoe UI';
+    text-align:center;
+    color:grey;
+}
+

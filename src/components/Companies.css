@@ -4,7 +4,7 @@
    
 }
 
-.col-sm-4 {
+.col-sm-3 {
     display:flex;
     width: 250px;
     color:grey;
@@ -14,7 +14,7 @@
     border-color: lightgrey;
     margin: 10px;
     min-width: 40px;
-    min-height:340px;    
+    min-height:120px;    
 }
 
 

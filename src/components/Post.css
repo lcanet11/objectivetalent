@@ -1,0 +1,37 @@
+.key-container {
+    flex-wrap: wrap;
+    flex-direction: column;
+   
+}
+
+.col-sm-8 {
+    display:flex;
+    height: auto;
+    color:black;
+    padding:10px;
+    font-size:14pt; 
+    font-family: 'Oswald';
+    font-style: bold;
+    border: 1px solid grey;
+    border-color: lightgrey;
+    margin: 10px;
+    text-align: left;
+    width:auto;
+}
+
+.col-sm-6 {
+    display:flex;
+    color:black;
+    padding:10px;
+    font-size:14pt; 
+    font-family: 'Oswald';
+    border: 1px solid grey;
+    border-color: lightgrey;
+    margin: 10px;
+    height: auto;
+    text-align: left !important;
+    width:435px;
+}
+
+
+
