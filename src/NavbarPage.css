@@ -1,0 +1,63 @@
+element.style{
+
+}
+
+.navbar-default {
+    background-color:rgb(253, 216, 92);
+    color: antiquewhite;
+}
+
+@media (min-width: 768px)
+.navbar {
+    border-radius: 4px;
+}
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    color:white;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.eventKey {
+    color: white;
+}
+
+.navbar-default .navbar-nav >li >a {
+    color:black;
+    font-family: sans-serif;
+    font-weight: bold;
+    color:black;
+}
+
+.a {
+    color:white;
+}
+
+.navbar-brand {
+    display:flex;
+    align-items:center;
+    color: black !important;
+}
+
+.navbar-brand>img {
+    padding:7px 14px;
+}
+
+.nav-logo {
+    float: left !important;
+    margin-top: 5px !important;
+    margin-right: 3px !important;
+}
+
+.navbar-right {
+    align-items: right !important;
+}
