@@ -8,4 +8,17 @@ const getJobs = async function () {
   }
   return response
 }
-export default getJobs
+export default getJobs 
+
+
+/* const getCountry=async function(){
+  let response
+  try {
+    response=await axios.get('https://api.printful.com/countries')
+  } catch (error) {
+    console.log('error getting api', error)
+  }
+  return response
+} */
+
+
