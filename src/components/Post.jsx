@@ -130,6 +130,9 @@ validateField(fieldName,value) {
     case 'schedule'
     //valid if in contracttype class: standardcheck || flexiblecheck are checked 
     
+    case 'locationtype'
+    //valid if in locationtype class: accuratelocationcheck || fieldofficecheck || clientofficecheck are checked 
+
     case 'benefits'
     //always valid 
 
@@ -156,6 +159,7 @@ validateField(fieldName,value) {
 
 
   }
+
   this.setState({ formErrors: fieldValidationErrors,
                   emailValid: emailValid,
                   stateValid: stateValid
@@ -222,8 +226,8 @@ validateField(fieldName,value) {
               <input type='text' name='country' className='form-control' placeholder='Country' value={this.state.country} onChange={this.handleChange} />
             </div>
             <ControlLabel>Location Type: is this the location where the employee will be working?</ControlLabel>
-            <FormGroup onChange={this.handleChange}>
-              <Checkbox name='accuratelocationcheck' checked={this.state.locationcheck} inline>Yes, the employee will be working at this location</Checkbox>
+            <FormGroup className 'locationtype' onChange={this.handleChange}>
+              <Checkbox name='accuratelocationcheck' checked={this.state.accuratelocationcheck} inline>Yes, the employee will be working at this location</Checkbox>
               <Checkbox name='fieldofficecheck' checked={this.state.fieldofficecheck} inline>No, the employee will be working at one of our field locations</Checkbox>
               <Checkbox name='clientofficecheck' checked={this.state.clientofficecheck} inline>No, the employee will be working at a client's location</Checkbox>
             </FormGroup>

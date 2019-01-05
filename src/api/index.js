@@ -8,8 +8,7 @@ const getJobs = async function () {
   }
   return response
 }
-export default getJobs 
-
+export default getJobs
 
 /* const getCountry=async function(){
   let response
@@ -20,5 +19,3 @@ export default getJobs
   }
   return response
 } */
-
-
