@@ -27,10 +27,12 @@ class NavbarPage extends React.Component {
             <NavItem eventKey={2} href='Events'>
       Events
             </NavItem>
+            <NavItem class='navbar-right' eventKey={2} href='Blog'>
+      Blog
+            </NavItem>
             <NavItem class='navbar-right' eventKey={2} href='About'>
       About Us
             </NavItem>
-
             {/*   <NavDropdown eventKey={3} title='More' id='basic-nav-dropdown'>
               <MenuItem eventKey={3.1} href='Jobs'>Search for a job</MenuItem>
               <MenuItem eventKey={3.2} href='Companies'>Hiring Companies</MenuItem>

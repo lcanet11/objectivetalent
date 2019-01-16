@@ -14,6 +14,8 @@ export default class Post extends Component {
       company: '',
       email: '',
       title: '',
+      summary: '',
+      minreq: '',
       description: '',
       address: '',
       city: '',
@@ -37,6 +39,7 @@ export default class Post extends Component {
       visacheck: false,
       novisacheck: false,
       immediatemedcheck: false,
+      onemonthcheck: false,
       threemonthcheck: false,
       nomedcheck: false,
       onsitecheck: false,
@@ -46,13 +49,13 @@ export default class Post extends Component {
       lesstwoweekcheck: false,
       twoweekcheck: false,
       onemonthcheck: false,
-      unlimitedcheck: false
+      unlimitedcheck: false,
       emailValid: false,
-      formValid: false 
+      formValid: false
     }
   }
 
-/*   getValidationState () {
+  /*   getValidationState () {
     const length = this.state.value.length
     if (length > 10) return 'success'
     else if (length > 5) return 'warning'
@@ -61,131 +64,141 @@ export default class Post extends Component {
   } */
 
   handleChange (e) {
-/*     const name=e.target.name;
-    const value=e.target.value; */
+    const name = e.target.name
+    const value = e.target.value
     console.log('current value is: ', value)
-    this.setState({ [name]: value () !== 'on' ? value : e.target.checked }) /* => { this.validateField(name, value) };*/
+    // this.setState({ [name]: value },
+    //   () => { this.validateField(name, value) })
+    // this.validateField(name, value)
     console.log(`${e.target.name} is: `, e.target.checked)
   }
-
-validateField(fieldName,value) {
-  let fieldValidationErrors=this.state.formErrors;
-  let emailValid=this.state.emailValid;
-  let stateValid=this.state.stateValid;
-  let companyValid=this.state.companyValid; 
-
-  switch(fieldName){
-    case 'company':
-    companyValid = value.length<30;
-    fieldValidationErrors.company = companyValid ? '' : ' too long';
-    break;
-
-    case 'email':
-    emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-    fieldValidationErrors.email = emailValid ? '' : ' is invalid';
-    break;
-
-    case 'title':
-    titleValid = value.length<40;
-    fieldValidationErrors.title = titleValid ? '' : ' too long'
-    break;
-
-    case 'description':
-    descriptionValid = value.length<1500;
-    fieldValidationErrors.description = descriptionValid ? '' : ' please abbreviate description'
-    break;
-
-    case 'address':
-    addressValid = value.length<100;
-    fieldValidationErrors.address = addressValid ? '' : ' too long'
-    break;
-
-    case 'city':
-    cityValid = value.length<50;
-    fieldValidationErrors.city = cityValid ? '' : ' too long'
-
-    case 'state':
-    stateValid = value.length<20;
-    fieldValidationErrors.state = stateValid ? '': ' too long';
-    break;
-
-    case 'zip':
-    zipValid = value.length<10;
-    fieldValidationErrors.zip = zipValid ? '': ' too long';
-    break;
-
-    case 'country':
-    countryValid = value.length<40;
-    fieldValidationErrors.country = countryValid ? '': ' too long';
-    break;
-
-    case 'otherbennies':
-    otherbenniesValid = value.length<100;
-    fieldValidationErrors.otherbennies = otherbenniesValid ? '': ' too long';
-    break;
-
-    case 'contracttype'
-    //Valid if in contracttype class: fieldofficecheck || accuratelocationcheck || clientofficecheck are checked
-
-    case 'schedule'
-    //valid if in contracttype class: standardcheck || flexiblecheck are checked 
-    
-    case 'locationtype'
-    //valid if in locationtype class: accuratelocationcheck || fieldofficecheck || clientofficecheck are checked 
-
-    case 'benefits'
-    //always valid 
-
-    case 'visa'
-    //valid if in visa class: visacheck || novisacheck are checked 
-
-    case 'medstart'
-    //valid if in medstart class: immediatemedcheck || threemonthcheck || nomedcheck are checked 
-
-    case 'remotework'
-    //valid if in remotework class: onsitecheck || remotecheck || remote1daycheck || someremote are checked 
-
-    case 'overtimecomp'
-    //valid if in overtimecomp class: nocompcheck || timeoffcompcheck || overtimepaycheck are checked 
-
-    case 'vacation'
-    //valid if in vacation class: lesstwoweekcheck || twoweekcheck || onemonthcheck || unlimited check are checked 
-
-    case 'emaillist'
-    //valid if in emaillist class: emailcheck || noemailcheck || followupcheck are checked 
-    
-    default:
-    break;
-
-
+  onSubmit (e) {
+    e.preventDefaults()
   }
+  // validateField (fieldName, value, checked) {
+  //   let fieldValidationErrors = this.state.formErrors
+  //   let emailValid = this.state.emailValid
+  //   let stateValid = this.state.stateValid
+  //   let companyValid = this.state.companyValid
 
-  this.setState({ formErrors: fieldValidationErrors,
-                  emailValid: emailValid,
-                  stateValid: stateValid
-                }, this.validateForm)
+  //   switch (fieldName) {
+  //     case 'company':
+  //       companyValid = value.length < 30
+  //       fieldValidationErrors.company = companyValid ? '' : ' too long'
+  //       break
 
-  validateForm() {
-      this.setState({formValid: this.state.emailValid && this.state.passwordValid});
+  //     case 'email':
+  //       emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
+  //       fieldValidationErrors.email = emailValid ? '' : ' is invalid'
+  //       break
+
+  //     case 'title':
+  //       titleValid = value.length < 40
+  //       fieldValidationErrors.title = titleValid ? '' : ' too long'
+  //       break
+
+  //     case 'summary':
+  //       summaryValid = value.length < 200
+  //       fieldValidationErrors.summary = summaryValid ? '' : ' please abbreviate the job summary'
+  //       break
+
+  //     case 'minreq':
+  //       minreqValid = value.length < 140
+  //       fieldValidationErrors.minreq = minreqValid ? '' : ' please abbreviate the job requirements'
+  //       break
+
+  //     case 'description':
+  //       descriptionValid = value.length < 4000
+  //       fieldValidationErrors.description = descriptionValid ? '' : ' please abbreviate the job requirements'
+  //       break
+
+  //     case 'address':
+  //       addressValid = value.length < 100
+  //       fieldValidationErrors.address = addressValid ? '' : ' too long'
+  //       break
+
+  //     case 'city':
+  //       cityValid = value.length < 50
+  //       fieldValidationErrors.city = cityValid ? '' : ' too long'
+
+  //     case 'state':
+  //       stateValid = value.length < 20
+  //       fieldValidationErrors.state = stateValid ? '' : ' too long'
+  //       break
+
+  //     case 'zip':
+  //       zipValid = value.length < 10
+  //       fieldValidationErrors.zip = zipValid ? '' : ' too long'
+  //       break
+
+  //     case 'country':
+  //       countryValid = value.length < 40
+  //       fieldValidationErrors.country = countryValid ? '' : ' too long'
+  //       break
+
+  //     case 'otherbennies':
+  //       otherbenniesValid = value.length < 100
+  //       fieldValidationErrors.otherbennies = otherbenniesValid ? '' : ' too long'
+  //       break
+
+  //       // case 'contracttype'
+  //       // //Valid if in contracttype class: fieldofficecheck || accuratelocationcheck || clientofficecheck are checked
+
+  //       // case 'schedule'
+  //       // //valid if in contracttype class: standardcheck || flexiblecheck are checked
+
+  //       // case 'locationtype'
+  //       // //valid if in locationtype class: accuratelocationcheck || fieldofficecheck || clientofficecheck are checked
+
+  //       // case 'benefits'
+  //       // //always valid
+
+  //       // case 'visa'
+  //       // //valid if in visa class: visacheck || novisacheck are checked
+
+  //       // case 'medstart'
+  //       // //valid if in medstart class: immediatemedcheck || onemonthcheck || threemonthcheck || nomedcheck are checked
+
+  //       // case 'remotework'
+  //       // //valid if in remotework class: onsitecheck || remotecheck || remote1daycheck || someremote are checked
+
+  //       // case 'overtimecomp'
+  //       // //valid if in overtimecomp class: nocompcheck || timeoffcompcheck || overtimepaycheck are checked
+
+  //       // case 'vacation'
+  //       // //valid if in vacation class: lesstwoweekcheck || twoweekcheck || onemonthcheck || unlimited check are checked
+
+  //       // case 'emaillist'
+  //       // //valid if in emaillist class: emailcheck || noemailcheck || followupcheck are checked
+
+  //       // default:
+  //       break
+  //   }
+  // }
+  // this.setState({ formErrors: fieldValidationErrors,
+  //                 emailValid: emailValid,
+  //                 stateValid: stateValid
+  //               }, this.validateForm)
+
+  // validateForm() {
+  //     this.setState({formValid: this.state.emailValid && this.state.passwordValid})
+  // }
+
+  errorClass (error) {
+    return (error.length === 0 ? '' : 'has-error')
   }
-
-  errorClass(error) {
-    return(error.length === 0 ? '' : 'has-error');
-  }
-
-}
-
 
   render () {
+    // const validationState = this.getValidationState()
     return (
       <Grid>
         <form>
-          {/* <div className='panel panel-default'>
-          <FormErrors formErrors={this.state.formErrors} />
-          </div> */}
+          <div className='panel panel-default'>
+            {/* <FormErrors formErrors={this.state.formErrors} /> */}
+          </div>
           <FormGroup
             controlId='formBasicText'
-            validationState={this.getValidationState()}
+            // validationState={validationState}
           >
             <ControlLabel>Post a Job for Free!</ControlLabel>
             <br />
@@ -204,9 +217,25 @@ validateField(fieldName,value) {
             <br />
             <FormControl
               componentClass='textarea'
-              style={{ height: '200px' }}
+              style={{ height: '150px' }}
+              name='summary'
+              placeholder='Job Summary (no more than 200 characters, please)'
+              onChange={this.handleChange}
+            />
+            <br />
+            <FormControl
+              componentClass='textarea'
+              style={{ height: '100px' }}
+              name='minimumreq'
+              placeholder='Minimum Requirements (no more than 140 characters, please)'
+              onChange={this.handleChange}
+            />
+            <br />
+            <FormControl
+              componentClass='textarea'
+              style={{ height: '300px' }}
               name='description'
-              placeholder='Job Description (no more than 100 words, please)'
+              placeholder='Full Job Description'
               onChange={this.handleChange}
             />
             <br />
@@ -226,7 +255,7 @@ validateField(fieldName,value) {
               <input type='text' name='country' className='form-control' placeholder='Country' value={this.state.country} onChange={this.handleChange} />
             </div>
             <ControlLabel>Location Type: is this the location where the employee will be working?</ControlLabel>
-            <FormGroup className 'locationtype' onChange={this.handleChange}>
+            <FormGroup className='locationtype' onChange={this.handleChange}>
               <Checkbox name='accuratelocationcheck' checked={this.state.accuratelocationcheck} inline>Yes, the employee will be working at this location</Checkbox>
               <Checkbox name='fieldofficecheck' checked={this.state.fieldofficecheck} inline>No, the employee will be working at one of our field locations</Checkbox>
               <Checkbox name='clientofficecheck' checked={this.state.clientofficecheck} inline>No, the employee will be working at a client's location</Checkbox>
@@ -261,6 +290,7 @@ validateField(fieldName,value) {
             <ControlLabel>Health Insurance Starts: </ControlLabel>
             <FormGroup onChange={this.handleChange}>
               <Checkbox name='immediatemedcheck' checked={this.state.immediatemedcheck} inline>Immediately</Checkbox>
+              <Checkbox name='onemonthcheck' checked={this.state.onemonthcheck} inline>After 1 month</Checkbox>
               <Checkbox name='threemonthcheck' checked={this.state.threemonthcheck} inline>After 3 months</Checkbox>
               <Checkbox name='nomedcheck' checked={this.state.nomedcheck} inline>N/A</Checkbox>
             </FormGroup>
