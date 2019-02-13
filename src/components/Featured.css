@@ -1,0 +1,20 @@
+.key-container {
+    flex-wrap: wrap;
+    flex-direction: column;
+   
+}
+
+.col-sm-4 {
+    display:flex;
+    width: 250px;
+    color:grey;
+    padding:10px;
+    font-size:12pt; 
+    border: 1px solid grey;
+    border-color: lightgrey;
+    margin: 10px;
+    min-width: 40px;
+    min-height:340px;    
+}
+
+

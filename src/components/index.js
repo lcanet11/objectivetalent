@@ -4,5 +4,6 @@ import Jobs from './Jobs'
 import Events from './Events'
 import Companies from './Companies'
 import Blog from './Blog'
+import Featured from './Featured'
 
-export { About, Post, Jobs, Events, Companies, Blog }
+export { About, Post, Jobs, Events, Companies, Blog, Featured }

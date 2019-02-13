@@ -17,6 +17,9 @@ class NavbarPage extends React.Component {
             </Navbar.Brand>
           </Navbar.Header>
           <Nav >
+            <NavItem eventKey={2} href='Featured'>
+      Featured Jobs
+            </NavItem>
             <NavItem eventKey={2} href='Post'>
       Post a Job
             </NavItem>
@@ -27,10 +30,10 @@ class NavbarPage extends React.Component {
             <NavItem eventKey={2} href='Events'>
       Events
             </NavItem>
-            <NavItem class='navbar-right' eventKey={2} href='Blog'>
+            <NavItem eventKey={2} href='Blog'>
       Blog
             </NavItem>
-            <NavItem class='navbar-right' eventKey={2} href='About'>
+            <NavItem eventKey={2} href='About'>
       About Us
             </NavItem>
             {/*   <NavDropdown eventKey={3} title='More' id='basic-nav-dropdown'>
@@ -42,7 +45,7 @@ class NavbarPage extends React.Component {
             </NavDropdown> */}
           </Nav>
         </Navbar>
-        {this.props.children}
+       {this.props.children}
 
       </div>
     )

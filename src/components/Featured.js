@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Grid, Row, Col, Image, Button } from 'react-bootstrap'
-import getJobs from '../api'
-import './Jobs.css'
+import './Featured.css'
 
 
-export default class Jobs extends Component {
+export default class Featured extends Component {
   constructor (props) {
     super(props)
-    this.state = { jobs: null }
+  //  this.state = { jobs: null }
   }
 
-  async renderJobs () {
+/*   async renderJobs () {
     const result = await getJobs()
     const jobsArray = result.data.jobs
     const jobs = jobsArray.map(function (job) {
@@ -33,11 +32,14 @@ export default class Jobs extends Component {
     const result = await this.renderJobs()
     this.setState({ jobs: result })
   }
-
+ */
   render () {
     return (
       <Grid>
-        <div className='key-container' > {this.state.jobs} </div>
+        <div className='col-sm-4' > aaaa </div>
+        <div className='col-sm-4' > aaaa </div>
+        <div className='col-sm-4' > aaaa </div>
+        <div className='col-sm-4' > aaaa </div>
       </Grid>
     )
   }
