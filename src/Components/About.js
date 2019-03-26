@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './About.css'
+import './styles/About.css'
 // import { XMasonry, XBlock } from 'react-xmasonry' // Imports JSX plain sources
 import { XMasonry, XBlock } from 'react-xmasonry/dist/index.js' // Imports precompiled bundle
 import luci from './images/luci2.jpg'
@@ -42,7 +42,7 @@ export default class Events extends Component {
             <h4>Job Fairs</h4>
             <h4>Tech Events</h4>
             <h4>Mentorship Matching</h4>
-            <h4>Digital Sourcing</h4><br/>
+            <h4>Digital Sourcing</h4><br />
             <h3> Contact Us</h3>
             <h4><i>sales@objectivetalent.com</i></h4>
           </div>

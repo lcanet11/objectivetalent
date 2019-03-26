@@ -3,7 +3,7 @@ import React from 'react'
 import { Router, Route } from 'react-router-dom'
 import Navbar from './NavbarPage'
 import history from './history'
-import { Jobs, Post, About, Events, Companies, Blog, Featured } from './components'
+import { Jobs, Post, About, Events, Companies } from './Components'
 
 function App () {
   return (
@@ -16,8 +16,6 @@ function App () {
           <Route exact path='/post' component={Post} />
           <Route exact path='/events' component={Events} />
           <Route exact path='/companies' component={Companies} />
-          <Route exact path='/blog' component={Blog} />
-          <Route exact path='/featured' component={Featured} />
         </Navbar>
       </div>
     </Router>

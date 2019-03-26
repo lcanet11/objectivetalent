@@ -1,7 +1,7 @@
 import React from 'react'
-import { Navbar, Nav, NavItem, MenuItem, NavDropdown } from 'react-bootstrap'
+import { Navbar, Nav, NavItem } from 'react-bootstrap'
 import PropTypes from 'prop-types'
-import './NavbarPage.css'
+import './Components/styles/NavbarPage.css'
 import favicon from './favicon.ico'
 
 class NavbarPage extends React.Component {
@@ -17,9 +17,6 @@ class NavbarPage extends React.Component {
             </Navbar.Brand>
           </Navbar.Header>
           <Nav >
-            <NavItem eventKey={2} href='Featured'>
-      Featured Jobs
-            </NavItem>
             <NavItem eventKey={2} href='Post'>
       Post a Job
             </NavItem>
@@ -45,7 +42,7 @@ class NavbarPage extends React.Component {
             </NavDropdown> */}
           </Nav>
         </Navbar>
-       {this.props.children}
+        {this.props.children}
 
       </div>
     )

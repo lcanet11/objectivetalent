@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import { Grid, Row, Col, Image, Button } from 'react-bootstrap'
-import getJobs from '../api'
-import './Jobs.css'
-
+import { Grid } from 'react-bootstrap'
+import { getJobs } from '../api'
+import './styles/Jobs.css'
 
 export default class Jobs extends Component {
   constructor (props) {
