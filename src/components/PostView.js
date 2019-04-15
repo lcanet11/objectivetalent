@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { AsyncSeriesHook } from 'tapable'
+import './PostView.css'
 
 class PostView extends Component {
   constructor (props) {
@@ -36,8 +37,8 @@ class PostView extends Component {
     if (this.state.post.title) {
       build = (
         <div>
-          <h1>{this.state.post.title.rendered}</h1>
-          <div dangerouslySetInnerHTML={this.createMarkup(
+          <h1 className='col-md-8 col-md-offset-3 centered' dangerouslySetInnerHTML={this.createMarkup(this.state.post.title.rendered)} />
+          <div className='col-md-4 col-md-offset-4 centered' dangerouslySetInnerHTML={this.createMarkup(
             this.state.post.content.rendered
           )}
           />

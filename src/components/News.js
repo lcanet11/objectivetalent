@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { AsyncSeriesHook } from 'tapable'
+import './News.css'
 
 class News extends Component {
   constructor (props) {
@@ -31,9 +32,9 @@ class News extends Component {
           <Link to={`/${post.slug}`} key={post.id}>
             <div className='card' key={post.id}>
               <div className='card-content'>
-                <h3
+                <h3 className='head'
                   dangerouslySetInnerHTML={this.createMarkup(post.title.rendered)} />
-                <div
+                <div className='intro'
                   dangerouslySetInnerHTML={this.createMarkup(post.excerpt.rendered)}
                 />
               </div>
