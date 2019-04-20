@@ -46,7 +46,9 @@ export default class Post extends Component {
       benefits: [],
       emailList: '',
       internalCandidate: '',
-      emptyField: false
+      isPosted: false,
+      emptyField: false,
+      postedSuccessfully: false
     }
   }
 
@@ -72,8 +74,22 @@ export default class Post extends Component {
       this.setState({ [name]: value })
     }
   }
-
-  onSubmit (e) {
+  getPostedAlert () {
+    let alert = null
+    if (this.state.isPosted) {
+      if (this.state.postedSuccessfully) {
+        return <Alert variant='info'>
+    Form submitted successfully.
+        </Alert>
+      } else {
+        return <Alert variant='danger'>
+  Error submitting form, please try again.
+        </Alert>
+      }
+    }
+    return alert
+  }
+  async onSubmit (e) {
     e.preventDefault()
     let emptyField = false
     map(this.state, (field) => {
@@ -82,13 +98,20 @@ export default class Post extends Component {
       }
     })
     if (!emptyField) {
-      postJobs(this.state)
+      const result = await postJobs(this.state)
+      if (result) {
+        this.setState({ postedSuccessfully: true })
+      } else {
+        this.setState({ postedSuccessfully: false })
+      }
+      this.setState({ isPosted: true })
     } else {
       this.setState({ emptyField })
     }
   }
 
   render () {
+    const postedAlert = this.getPostedAlert()
     return (
       <Grid>
         <form className='demoForm' onSubmit={this.onSubmit}>
@@ -180,6 +203,7 @@ export default class Post extends Component {
             {this.state.emptyField ? <Alert variant='danger'>
           One of the form fields are empty, please make sure all required fields are filled.
             </Alert> : null }
+            {postedAlert}
             <Button type='submit' className='btn btn-primary' size='lg' block>Submit</Button>
           </div>
           <br />
