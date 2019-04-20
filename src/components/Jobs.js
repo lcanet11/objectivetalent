@@ -1,32 +1,13 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import { Grid, Row, Col, Image, Button } from 'react-bootstrap'
-import getJobs from '../api'
-import './Jobs.css'
-// import { chunk } from 'lodash'
+import { Grid } from 'react-bootstrap'
+import { getJobs } from '../api'
+import './styles/Jobs.css'
 
 export default class Jobs extends Component {
   constructor (props) {
     super(props)
     this.state = { jobs: null }
   }
-  // async componentDidMount () {
-  //   console.log('inside componentdidmount')
-  //   const jobs = await getJobs()
-  //   let nameArray = []
-  //   let companyArray = []
-  //   let snippetArray = []
-  //   let linkArray = []
-  //   let locationArray = [' ', ' ']
-  //   for (var i = 0; i < 100; i++) {
-  //     nameArray.push(jobs.data.jobs[i].name)
-  //     companyArray.push(jobs.data.jobs[i].hiring_company.name)
-  //     snippetArray.push(jobs.data.jobs[i].snippet)
-  //     linkArray.push(jobs.data.jobs[i].url)
-  //     locationArray.push(jobs.data.jobs[i].city, jobs.data.jobs[i].state)
-  //   }
-  //   return console.log(nameArray, companyArray, snippetArray, linkArray, locationArray)
-  // }
 
   async renderJobs () {
     const result = await getJobs()

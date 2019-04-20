@@ -3,7 +3,7 @@ import React from 'react'
 import { Router, Route } from 'react-router-dom'
 import Navbar from './NavbarPage'
 import history from './history'
-import { Jobs, Post, About, Events, Companies } from './components'
+import { Jobs, Post, About, Events, Companies } from './Components'
 
 function App () {
   return (
