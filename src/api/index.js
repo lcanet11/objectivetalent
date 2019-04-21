@@ -14,7 +14,7 @@ export const postJobs = async function (formData) {
   delete formData.postedSuccessfully
   delete formData.isPosted
   try {
-    await axios.post('http://server.objectivetalent.com/jobs/post', { ...formData })
+    await axios.post('https://server.objectivetalent.com/jobs/post', { ...formData })
     return true
   } catch (error) {
     return false
