@@ -7,6 +7,7 @@ export default class Jobs extends Component {
   constructor (props) {
     super(props)
     this.state = { jobs: null }
+    this.createMarkup = this.createMarkup.bind()
   }
 
   async renderJobs () {
@@ -20,8 +21,7 @@ export default class Jobs extends Component {
         Salary maximum: {job.salary_max}<br />
         Salary source: {job.salary_source}<br /><br />
         Posted Time: {job.posted_time_friendly}<br />
-        <a href={job.url}>Apply</a>
-
+        <a className='link' href={job.url}>Apply</a>
       </div>
       )
     })
@@ -30,6 +30,10 @@ export default class Jobs extends Component {
   async componentDidMount () {
     const result = await this.renderJobs()
     this.setState({ jobs: result })
+  }
+
+  createMarkup (html) {
+    return { __html: html }
   }
 
   render () {
