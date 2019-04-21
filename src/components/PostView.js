@@ -1,11 +1,14 @@
+// @flow 
+
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
-import { AsyncSeriesHook } from 'tapable'
 import './PostView.css'
 
+type PostViewProps = {
+  match: any
+}
 class PostView extends Component {
-  constructor (props) {
+  constructor (props: PostViewProps) {
     super(props)
     this.state = {
       post: {}
@@ -14,14 +17,10 @@ class PostView extends Component {
   }
 
   componentDidMount () {
-    console.log('inside component did mount')
     const slug = this.props.match.params.slug
-    console.log('got the slug')
-    console.log(slug)
     axios
       .get(`http://www.objectivetalent.com/blog/wp-json/wp/v2/posts?slug=${slug}`)
       .then(post => {
-        console.log(post)
         this.setState({
           post: post.data[0]
         })
