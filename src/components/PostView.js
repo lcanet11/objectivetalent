@@ -1,4 +1,4 @@
-// @flow 
+// @flow
 
 import React, { Component } from 'react'
 import axios from 'axios'
@@ -19,7 +19,7 @@ class PostView extends Component {
   componentDidMount () {
     const slug = this.props.match.params.slug
     axios
-      .get(`http://www.objectivetalent.com/blog/wp-json/wp/v2/posts?slug=${slug}`)
+      .get(`https://www.objectivetalent.com/blog/wp-json/wp/v2/posts?slug=${slug}`)
       .then(post => {
         this.setState({
           post: post.data[0]
