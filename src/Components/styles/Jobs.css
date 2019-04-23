@@ -10,15 +10,45 @@
     color:grey;
     padding:10px;
     font-size:12pt; 
-    border: 1px solid grey;
+    border: 0px solid grey;
     border-color: lightgrey;
     margin: 10px;
     min-width: 40px;
-    min-height:340px;    
+    min-height:420px;    
     align-content: flex-start;
+    text-align: center;
 }
 
-.link {
-
+.col-sm-3 {
+    border-radius:10px;
 }
 
+.intro{
+    font-size: large;
+    color: black
+}
+
+.head{
+    font-weight: bold;
+    color: gray;
+}
+
+.company{
+    font-weight: bold;
+    color: #FDD85C;
+    font-variant-caps: small-caps;
+}
+
+.location{
+    font-style: italic;
+    align-items: center;
+}
+
+.captions{
+    font-style:italic;
+}
+
+.summary{
+    font-size: 14px;
+    font-weight: normal !important;
+}

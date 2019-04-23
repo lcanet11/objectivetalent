@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { AsyncSeriesHook } from 'tapable'
 import './News.css'
 
 class News extends Component {
@@ -13,7 +14,7 @@ class News extends Component {
   }
 
   componentDidMount () {
-    axios.get('https://www.objectivetalent.com/blog/wp-json/wp/v2/posts').then(posts => {
+    axios.get('http://www.objectivetalent.com/blog/wp-json/wp/v2/posts').then(posts => {
       this.setState({
         posts: posts.data
       })
