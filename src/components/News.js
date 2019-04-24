@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { AsyncSeriesHook } from 'tapable'
 import './News.css'
 
 class News extends Component {
