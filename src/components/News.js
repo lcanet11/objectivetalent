@@ -14,7 +14,7 @@ class News extends Component {
   }
 
   componentDidMount () {
-    axios.get('http://www.objectivetalent.com/blog/wp-json/wp/v2/posts').then(posts => {
+    axios.get('https://www.objectivetalent.com/blog/wp-json/wp/v2/posts').then(posts => {
       this.setState({
         posts: posts.data
       })
