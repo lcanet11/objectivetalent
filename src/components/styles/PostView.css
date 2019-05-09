@@ -1,0 +1,9 @@
+col-md-8{
+  font-size: medium;
+  font-family: 'Calibri';
+}
+
+.col-md-4{
+    margin-top: 10px;
+    font-size: large;
+}

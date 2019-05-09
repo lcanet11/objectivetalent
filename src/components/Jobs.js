@@ -31,20 +31,20 @@ export default class Jobs extends Component {
             <Row className='location'>
               {job.city}, {job.state}
             </Row>
-            <br />
             <Row>
-              <p className='captions'>Salary range: {job.salary_min} to {job.salary_max}
+              <p className='captions'>Salary: {job.salary_min} to {job.salary_max}
               </p>
             </Row>
             <Row className='summary'>
               {markUp}
             </Row>
-            <br />
             <Row className='location'>
           Posted Time: {job.posted_time_friendly}
             </Row>
             <Row>
-              <a className='link' href={job.url}>Apply</a>
+              <button className='button'>
+                <a className='link' href={job.url}>Apply</a>
+              </button>
             </Row>
           </container>
         </div>

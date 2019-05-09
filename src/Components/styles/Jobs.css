@@ -42,6 +42,7 @@
 .location{
     font-style: italic;
     align-items: center;
+    margin: 5px;
 }
 
 .captions{
@@ -51,4 +52,20 @@
 .summary{
     font-size: 14px;
     font-weight: normal !important;
+}
+
+.link {
+    color: gray;
+    font-weight: regular;
+}
+
+.button {
+    margin: 5px;
+    background-color: #FDD85C;
+    border-radius: 6px;
+    width: 100px;
+}
+
+.button:hover {
+    background-color: black;
 }
