@@ -3,6 +3,7 @@ import './styles/Post.css'
 import { FormControl, FormGroup, ControlLabel, Checkbox, Grid, Button, Alert } from 'react-bootstrap'
 import { isEmpty, map } from 'lodash'
 import { postJobs } from '../api'
+
 const locationType = {
   yes: 'Yes',
   fieldLocation: 'No, the employee will be working at one of our field locations',
@@ -193,6 +194,12 @@ export default class Post extends Component {
             <Checkbox id='internalCandidate' name={internalCandidate.yes} checked={this.state.internalCandidate === internalCandidate.yes} inline>Yes</Checkbox>
             <Checkbox id='internalCandidate' name={internalCandidate.no} checked={this.state.internalCandidate === internalCandidate.no} inline>No</Checkbox>
           </FormGroup>
+          <FormControl
+            componentClass='textarea'
+            name='link'
+            placeholder='Paste Application Link'
+            onChange={this.handleTextChange}
+          />
           <ControlLabel>Are you interested in advertising through our email list?</ControlLabel>
           <FormGroup className='form-control' onChange={this.handleCheckChange}>
             <Checkbox id='emailList' name={emailList.yes} checked={this.state.emailList === emailList.yes} inline>Yes</Checkbox>

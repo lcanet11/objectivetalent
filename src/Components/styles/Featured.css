@@ -1,0 +1,63 @@
+.col-6 {
+    display:flex;
+    border: 0px solid grey;
+    border-color: rgb(82, 80, 80);
+    margin: 10px;
+}
+
+
+h1 {
+    font-family: Franklin Gothic Medium;
+    font-size: x-large;
+    font-style: bold;
+    margin: 20px;
+}
+
+h2 {
+    font-size: large;
+    font-style: bold;
+    color: #FDD85C;
+    margin: 20px;
+}
+
+.description {
+    font-size: medium;
+    margin: 20px;
+}
+
+.summary {
+    font-size: medium;
+    margin: 20px;
+}
+
+h3 {
+    font-size: medium;
+    margin: 20px;
+    color: grey;
+    font-style: italic;
+    font-family: Work Sans;
+}
+
+h4 {
+    font-size: medium;
+    margin: 20px;
+    color: grey;
+    font-style: italic;
+    font-family: Work Sans;
+}
+
+h5 {
+    font-size: medium;
+    margin: 20px;
+    color: grey;
+    font-style: italic;
+    font-family: Work Sans;
+}
+
+h6 {
+    font-size: medium;
+    margin: 20px;
+    color: grey;
+    font-style: italic;
+    font-family: Work Sans;
+}

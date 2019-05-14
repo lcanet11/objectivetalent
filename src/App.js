@@ -3,7 +3,7 @@ import React from 'react'
 import { Router, Route, Switch } from 'react-router-dom'
 import Navbar from './NavbarPage'
 import history from './history'
-import { Jobs, Post, About, Events, Companies, News, PostView } from './Components'
+import { Jobs, Post, About, Events, Companies, News, PostView, Featured } from './Components'
 
 function App () {
   return (
@@ -18,6 +18,7 @@ function App () {
             <Route exact path='/events' component={Events} />
             <Route exact path='/news' component={News} />
             <Route exact path='/companies' component={Companies} />
+            <Route exact path='/featured' component={Featured} />
             <Route path='/:slug' component={PostView} />
           </Switch>
         </Navbar>
