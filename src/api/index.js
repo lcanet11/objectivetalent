@@ -1,4 +1,5 @@
 import axios from 'axios'
+
 export const getJobs = async function () {
   let response
   try {
@@ -8,6 +9,7 @@ export const getJobs = async function () {
   }
   return response
 }
+
 export const postJobs = async function (formData) {
   // This removes extra fields that we don't want to be posted to our backend http://perfectionkills.com/understanding-delete/
   delete formData.emptyField
@@ -19,4 +21,17 @@ export const postJobs = async function (formData) {
   } catch (error) {
     return false
   }
+}
+
+export const getFeaturedJobs = async () => {
+  let result = null
+
+  try {
+    const jobs = await axios.get('https://server.objectivetalent.com/jobs/get')
+    result = jobs.data
+  } catch (error) {
+    console.log(error)
+  }
+
+  return result
 }

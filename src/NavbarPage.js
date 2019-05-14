@@ -17,6 +17,9 @@ class NavbarPage extends React.Component {
             </Navbar.Brand>
           </Navbar.Header>
           <Nav >
+            <NavItem eventKey={2} href='Featured'>
+      Featured Jobs
+            </NavItem>
             <NavItem eventKey={2} href='Post'>
       Post a Job
             </NavItem>

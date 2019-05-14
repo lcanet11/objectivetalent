@@ -5,5 +5,6 @@ import Events from './Events'
 import Companies from './Companies'
 import News from './News'
 import PostView from './PostView'
+import Featured from './Featured'
 
-export { About, Post, Jobs, Events, Companies, News, PostView }
+export { About, Post, Jobs, Events, Companies, News, PostView, Featured }
