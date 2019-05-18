@@ -5,8 +5,8 @@ import axios from 'axios'
 import './PostView.css'
 
 type PostViewProps = {
-  match: { 
-    params: { 
+  match: {
+    params: {
       slug: string
     }
   }
