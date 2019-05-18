@@ -5,7 +5,11 @@ import axios from 'axios'
 import './PostView.css'
 
 type PostViewProps = {
-  match: any
+  match: { 
+    params: { 
+      slug: string
+    }
+  }
 }
 class PostView extends Component {
   constructor (props: PostViewProps) {
