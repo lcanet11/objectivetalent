@@ -194,10 +194,11 @@ export default class Post extends Component {
             <Checkbox id='internalCandidate' name={internalCandidate.yes} checked={this.state.internalCandidate === internalCandidate.yes} inline>Yes</Checkbox>
             <Checkbox id='internalCandidate' name={internalCandidate.no} checked={this.state.internalCandidate === internalCandidate.no} inline>No</Checkbox>
           </FormGroup>
+          <ControlLabel>Application link/email</ControlLabel>
           <FormControl
             componentClass='textarea'
             name='link'
-            placeholder='Paste Application Link'
+            placeholder='Paste application link/email'
             onChange={this.handleTextChange}
           />
           <ControlLabel>Are you interested in advertising through our email list?</ControlLabel>
