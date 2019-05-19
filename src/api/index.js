@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+const donatelloUrl = 'https://www.server.objectivetalent.com'
 export const getJobs = async function () {
   let response
   try {
@@ -16,7 +17,7 @@ export const postJobs = async function (formData) {
   delete formData.postedSuccessfully
   delete formData.isPosted
   try {
-    await axios.post('https://server.objectivetalent.com/jobs/post', { ...formData }, { withCredentials: true })
+    await axios.post(`${donatelloUrl}/jobs/post`, { ...formData }, { withCredentials: true })
     return true
   } catch (error) {
     return false
@@ -27,7 +28,7 @@ export const getFeaturedJobs = async () => {
   let result = null
 
   try {
-    const jobs = await axios.get('https://server.objectivetalent.com/jobs/get')
+    const jobs = await axios.get(`${donatelloUrl}/jobs/get/`)
     result = jobs.data
   } catch (error) {
     console.log(error)
