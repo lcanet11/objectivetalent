@@ -14,9 +14,11 @@ function Featured (props) {
     featuredJobs()
   }, [])
   let formattedJobs = null
+
   if (featuredJobsState) {
-    formattedJobs = featuredJobsState.map((job) => {
-      if (!job.approved) {
+    formattedJobs = featuredJobsState.filter((job) => {
+      if (job.approved) {
+        console.log('job approved')
         return <div className='col-6'>
           <container>
             <h1>
@@ -50,6 +52,10 @@ function Featured (props) {
         </div>
       }
     })
+
+    if (formattedJobs.length === 0) {
+      return (<div> <h4> Ops. No Featured jobs available. If you are looking to be featured please visit</h4><a> https://objectivetalent.com/Post </a></div>)
+    }
   }
 
   return (
