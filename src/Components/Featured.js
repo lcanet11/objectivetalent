@@ -3,6 +3,11 @@ import React, { useEffect, useState } from 'react'
 import { getFeaturedJobs } from '../api'
 // import { Grid, Row } from 'react-bootstrap'
 import './styles/Featured.css'
+import styled from 'styled-components'
+
+const Container = styled.div`
+  margin-top: 130px;
+`
 
 function Featured (props) {
   const [ featuredJobsState, setFeaturedJobs ] = useState([])
@@ -60,7 +65,9 @@ function Featured (props) {
 
   return (
     <div>
-      {formattedJobs}
+        <Container>
+          {formattedJobs}
+        </Container>
     </div>
   )
 }

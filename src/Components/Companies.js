@@ -2,7 +2,12 @@ import React, { Component } from 'react'
 import { Grid } from 'react-bootstrap'
 import { getJobs } from '../api'
 import './styles/Companies.css'
+import styled from 'styled-components'
 // import { chunk } from 'lodash'
+
+const Container = styled.div`
+  margin-top: 130px;
+`
 
 export default class Jobs extends Component {
   constructor (props) {
@@ -29,9 +34,11 @@ export default class Jobs extends Component {
 
   render () {
     return (
-      <Grid>
-        <div className='key-container' > {this.state.jobs} </div>
-      </Grid>
+        <Container>
+          <Grid>
+            <div className='key-container' > {this.state.jobs} </div>
+          </Grid>
+      </Container>
     )
   }
 }
