@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import favicon from './favicon.ico'
 import { includes } from 'lodash'
