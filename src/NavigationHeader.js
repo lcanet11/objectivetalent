@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import favicon from './favicon.ico'
 import { includes } from 'lodash'
+import HamburgerBar from './Components/Icons/HamburgerBar'
+import useWindowDimensions from './Helpers/windowSizeHelper'
 
 const Container = styled.div`
     background-color: #000000;
@@ -16,6 +18,30 @@ const Container = styled.div`
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.32);
     justify-content: flex-start;
     display: flex;
+    @media only screen and (min-width: 325px) and (max-width: 959px){
+        height: ${(props) => props.displayDropdown ? '340px' : '115px'}; 
+    }
+`
+const IconContainer = styled.button`
+    flex: 1;
+    margin: 8px 16px;
+    z-index: 14;
+    background-color: transparent;
+    border: none;
+    height: auto;
+    position: absolute;
+    :focus {
+        border: none;
+        outline: none;
+    }
+`
+const LogoContainer = styled.div`
+    display: flex;
+    @media only screen and (min-width: 325px) and (max-width: 959px){
+        display: flex;
+        flex: 1;
+        justify-content: center;  
+    }
 `
 const ImageContainer = styled.div`
     display: block;
@@ -48,7 +74,6 @@ const HomeLink = styled.a`
         color: #FFD770;
         underline: none;
         text-decoration: none;
-}
     }
 `
 const NavBar = styled.div`
@@ -57,6 +82,16 @@ const NavBar = styled.div`
     flex: 1;
     position: absolute;
     margin-left: 56px;
+    display: flex;
+    flex-direction: row;
+    @media only screen and (min-width: 325px) and (max-width: 959px){
+        flex-direction: column;
+        top: 0;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0;
+        margin-top: 60px;
+    }        
 `
 const NavItem = styled.div`
     margin-left: 8px;
@@ -101,14 +136,18 @@ const navData = [
 
 ]
 
-function NavigationHeader (props) {
+function NavigationHeader () {
+    const [displayDropdown, setDisplayDropdown] = useState(false)
+    const { width } = useWindowDimensions()
+    const onClickHamburgerBar = () => {
+        setDisplayDropdown(!displayDropdown)
+    }
+    const showHamburgerBar = width <= 959 ? <IconContainer onClick={onClickHamburgerBar}><HamburgerBar /></IconContainer> : null
     const location = window.location.pathname
-    return (
-        <Container>
-            <ImageContainer>
-                <Image src={favicon} />
-            </ImageContainer>
-            <HomeLink href='Jobs'>Objective Talent</HomeLink>
+
+    let showNavBar
+    if (displayDropdown || width >= 959) {
+        showNavBar = (
             <NavBar>
             {navData.map(function(data, index) {
                 let isActive = false
@@ -121,6 +160,26 @@ function NavigationHeader (props) {
             })}
 
             </NavBar>
+        )
+    }
+
+    let showLogo
+    if (!displayDropdown || width >= 959) {
+        showLogo = (
+            <LogoContainer>
+                <ImageContainer>
+                    <Image src={favicon} />
+                </ImageContainer>
+                <HomeLink href='Jobs'>Objective Talent</HomeLink>
+            </LogoContainer>
+        )
+    }
+
+    return (
+        <Container displayDropdown={displayDropdown}>
+            {showHamburgerBar}
+            {showLogo}
+            {showNavBar}
         </Container>
     )
 }
