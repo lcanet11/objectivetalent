@@ -6,48 +6,55 @@ import luci from './images/luci2.jpg'
 import mahmoud from './images/mahmoudfinalbw.jpg'
 import yauheni from './images/yauhenifinal.jpg'
 import beryl from './images/berylfinalbw.jpg'
+import styled from 'styled-components'
+
+const Container = styled.div`
+  margin-top: 130px;
+`
 
 export default class Events extends Component {
   render () {
     return (
-      <XMasonry>
+      <Container>
+        <XMasonry>
 
-        <XBlock>
-          <div className='card'>
-            <p><center><img src={luci} width='80%' /></center></p>
-            <p><center>Lucienne Canet <br /> Sales Lead / Development Support</center></p>
-          </div>
-        </XBlock>
-        <XBlock>
-          <div className='card'>
-            <p><center><img src={mahmoud} width='80%' /></center></p>
-            <p><center>Mahmoud Maamoun<br /> React Lead / Sales Support</center></p>
-          </div>
-        </XBlock>
-        <XBlock>
-          <div className='card'>
-            <p><center><img src={beryl} width='80%' /></center></p>
-            <p><center>Beryl Lee <br />Digital Marketing</center></p>
-          </div>
-        </XBlock>
-        <XBlock>
-          <div className='card'>
-            <p><center><img src={yauheni} width='80%' /></center></p>
-            <p><center>Yauheni Ivaniuk<br /> iOS Lead</center></p>
-          </div>
-        </XBlock>
-        <XBlock >
-          <div className='card2' width={10}><h3>Services<br /></h3>
-            <h4>Recruitment Events</h4>
-            <h4>Job Fairs</h4>
-            <h4>Tech Events</h4>
-            <h4>Mentorship Matching</h4>
-            <h4>Digital Sourcing</h4><br />
-            <h3> Contact Us</h3>
-            <h4><i>sales@objectivetalent.com</i></h4>
-          </div>
-        </XBlock>
-      </XMasonry>
+          <XBlock>
+            <div className='card'>
+              <p><center><img src={luci} width='80%' /></center></p>
+              <p><center>Lucienne Canet <br /> Sales Lead / Development Support</center></p>
+            </div>
+          </XBlock>
+          <XBlock>
+            <div className='card'>
+              <p><center><img src={mahmoud} width='80%' /></center></p>
+              <p><center>Mahmoud Maamoun<br /> React Lead / Sales Support</center></p>
+            </div>
+          </XBlock>
+          <XBlock>
+            <div className='card'>
+              <p><center><img src={beryl} width='80%' /></center></p>
+              <p><center>Beryl Lee <br />Digital Marketing</center></p>
+            </div>
+          </XBlock>
+          <XBlock>
+            <div className='card'>
+              <p><center><img src={yauheni} width='80%' /></center></p>
+              <p><center>Yauheni Ivaniuk<br /> iOS Lead</center></p>
+            </div>
+          </XBlock>
+          <XBlock >
+            <div className='card2' width={10}><h3>Services<br /></h3>
+              <h4>Recruitment Events</h4>
+              <h4>Job Fairs</h4>
+              <h4>Tech Events</h4>
+              <h4>Mentorship Matching</h4>
+              <h4>Digital Sourcing</h4><br />
+              <h3> Contact Us</h3>
+              <h4><i>sales@objectivetalent.com</i></h4>
+            </div>
+          </XBlock>
+        </XMasonry>
+      </Container>
     )
   }
 }

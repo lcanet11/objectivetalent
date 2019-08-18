@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import './styles/News.css'
+import styled from 'styled-components'
+
+const Container = styled.div`
+  margin-top: 130px;
+`
 
 class News extends Component {
   constructor (props) {
@@ -27,19 +32,21 @@ class News extends Component {
   render () {
     return (
       <div>
-        {this.state.posts.map(post => (
-          <Link to={`/${post.slug}`} key={post.id}>
-            <div className='card' key={post.id}>
-              <div className='card-content'>
-                <h3 className='head'
-                  dangerouslySetInnerHTML={this.createMarkup(post.title.rendered)} />
-                <div className='intro'
-                  dangerouslySetInnerHTML={this.createMarkup(post.excerpt.rendered)}
-                />
+        <Container>
+          {this.state.posts.map(post => (
+            <Link to={`/${post.slug}`} key={post.id}>
+              <div className='card' key={post.id}>
+                <div className='card-content'>
+                  <h3 className='head'
+                    dangerouslySetInnerHTML={this.createMarkup(post.title.rendered)} />
+                  <div className='intro'
+                    dangerouslySetInnerHTML={this.createMarkup(post.excerpt.rendered)}
+                  />
+                </div>
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </Container>
       </div>
     )
   }

@@ -14,96 +14,103 @@ import cloudyswitch from './images/cloudyswitch.jpg'
 import peachrealestate from './images/peachrealestate.jpg'
 import cloudyfuse from './images/cloudyfuse.jpg'
 import winterharlem from './images/winterharlem.jpg'
+import styled from 'styled-components'
+
+const Container = styled.div`
+  margin-top: 130px;
+`
 
 export default class Events extends Component {
   render () {
     return (
-      <XMasonry>
-        <XBlock>
-          <div className='card'>
-            <img src={cochitigm} width='100%' />
-            {/*  <h1>Simple Card</h1>
-            <p>Any text!</p> */}
-          </div>
-        </XBlock>
-        <XBlock>
-          <div className='card'>
-            <img src={cloudyswitch} width='100%' />
-            {/*  <h1>Simple Card</h1>
-            <p>Any text!</p> */}
-          </div>
-        </XBlock>
-        <XBlock width={2}>
-          <div className='card'>
-            <img src={winterNeva} width='100%' />
-            {/*  <h1>Wider card</h1>
-            <p>Any text!</p> */}
-          </div>
-        </XBlock>
-        <XBlock width={2}>
-          <div className='card'>
-            <img src={cochiti} width='100%' />
-            {/*  <h1>Simple Card</h1>
-            <p>Any text!</p> */}
-          </div>
-        </XBlock>
-        <XBlock width={2}>
-          <div className='card'>
-            <img src={peach} width='100%' />
-            {/*  <h1>Wider card</h1>
-            <p>Any text!</p> */}
-          </div>
-        </XBlock>
-        <XBlock>
-          <div className='card'>
-            <img src={cloudyfuse} width='100%' />
-            {/*  <h1>Simple Card</h1>
-            <p>Any text!</p> */}
-          </div>
-        </XBlock>
-        <XBlock>
-          <div className='card'>
-            <img src={peachrealestate} width='100%' />
-            {/*  <h1>Simple Card</h1>
-            <p>Any text!</p> */}
-          </div>
-        </XBlock>
-        <XBlock>
-          <div className='card'>
-            <img src={winterharlem} width='100%' />
-            {/*  <h1>Simple Card</h1>
-            <p>Any text!</p> */}
-          </div>
-        </XBlock>
-        <XBlock>
-          <div className='card'>
-            <img src={everlastingcap} width='100%' />
-            {/*  <h1>Simple Card</h1>
-            <p>Any text!</p> */}
-          </div>
-        </XBlock>
-        <XBlock width={2}>
-          <div className='card'>
-            <img src={heavyfinal} width='100%' />
-            {/*  <h1>Wider card</h1>
+      <Container>
+        <XMasonry>
+          <XBlock>
+            <div className='card'>
+              <img src={cochitigm} width='100%' />
+              {/*  <h1>Simple Card</h1>
+              <p>Any text!</p> */}
+            </div>
+          </XBlock>
+          <XBlock>
+            <div className='card'>
+              <img src={cloudyswitch} width='100%' />
+              {/*  <h1>Simple Card</h1>
+              <p>Any text!</p> */}
+            </div>
+          </XBlock>
+          <XBlock width={2}>
+            <div className='card'>
+              <img src={winterNeva} width='100%' />
+              {/*  <h1>Wider card</h1>
+              <p>Any text!</p> */}
+            </div>
+          </XBlock>
+          <XBlock width={2}>
+            <div className='card'>
+              <img src={cochiti} width='100%' />
+              {/*  <h1>Simple Card</h1>
+              <p>Any text!</p> */}
+            </div>
+          </XBlock>
+          <XBlock width={2}>
+            <div className='card'>
+              <img src={peach} width='100%' />
+              {/*  <h1>Wider card</h1>
+              <p>Any text!</p> */}
+            </div>
+          </XBlock>
+          <XBlock>
+            <div className='card'>
+              <img src={cloudyfuse} width='100%' />
+              {/*  <h1>Simple Card</h1>
+              <p>Any text!</p> */}
+            </div>
+          </XBlock>
+          <XBlock>
+            <div className='card'>
+              <img src={peachrealestate} width='100%' />
+              {/*  <h1>Simple Card</h1>
+              <p>Any text!</p> */}
+            </div>
+          </XBlock>
+          <XBlock>
+            <div className='card'>
+              <img src={winterharlem} width='100%' />
+              {/*  <h1>Simple Card</h1>
+              <p>Any text!</p> */}
+            </div>
+          </XBlock>
+          <XBlock>
+            <div className='card'>
+              <img src={everlastingcap} width='100%' />
+              {/*  <h1>Simple Card</h1>
+              <p>Any text!</p> */}
+            </div>
+          </XBlock>
+          <XBlock width={2}>
+            <div className='card'>
+              <img src={heavyfinal} width='100%' />
+              {/*  <h1>Wider card</h1>
+          <p>Any text!</p> */}
+            </div>
+          </XBlock>
+          <XBlock width={2}>
+            <div className='card'>
+              <img src={cloudyKnoxVille} width='100%' />
+              {/*  <h1>Wider card</h1>
         <p>Any text!</p> */}
-          </div>
-        </XBlock>
-        <XBlock width={2}>
-          <div className='card'>
-            <img src={cloudyKnoxVille} width='100%' />
-            {/*  <h1>Wider card</h1>
+            </div>
+          </XBlock>
+          <XBlock width={2}>
+            <div className='card'>
+              <img src={everLastingSky} width='100%' />
+              {/*  <h1>Wider card</h1>
       <p>Any text!</p> */}
-          </div>
-        </XBlock>
-        <XBlock width={2}>
-          <div className='card'>
-            <img src={everLastingSky} width='100%' />
-            {/*  <h1>Wider card</h1>
-    <p>Any text!</p> */}
-          </div>
-        </XBlock>
-      </XMasonry>
+            </div>
+          </XBlock>
+        </XMasonry>
+      </Container>
 
     )
   }

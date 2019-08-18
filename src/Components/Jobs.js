@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import { Grid, Row } from 'react-bootstrap'
 import { getJobs } from '../api'
 import './styles/Jobs.css'
+import styled from 'styled-components'
+
+const Container = styled.div`
+  margin-top: 130px;
+`
 
 export default class Jobs extends Component {
   constructor (props) {
@@ -39,7 +44,7 @@ export default class Jobs extends Component {
               {markUp}
             </Row>
             <Row className='location'>
-          Posted Time: {job.posted_time_friendly}
+              Posted Time: {job.posted_time_friendly}
             </Row>
             <Row>
               <button className='button'>
@@ -64,9 +69,11 @@ export default class Jobs extends Component {
 
   render () {
     return (
-      <Grid>
-        <div className='key-container' > {this.state.jobs} </div>
-      </Grid>
+      <Container>
+        <Grid>
+          <div className='key-container' > {this.state.jobs} </div>
+        </Grid>
+      </Container>
     )
   }
 }

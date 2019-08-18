@@ -1,7 +1,8 @@
 
 import React from 'react'
 import { Router, Route, Switch } from 'react-router-dom'
-import Navbar from './NavbarPage'
+// import Navbar from './NavbarPage'
+import Navbar from './NavigationHeader'
 import history from './history'
 import { Jobs, Post, About, Events, Companies, News, PostView, Featured } from './Components'
 
@@ -9,7 +10,7 @@ function App () {
   return (
     <Router history={history}>
       <div>
-        <Navbar>
+        <Navbar />
           <Switch>
             <Route exact path='/' component={Jobs} />
             <Route exact path='/jobs' component={Jobs} />
@@ -21,7 +22,6 @@ function App () {
             <Route exact path='/featured' component={Featured} />
             <Route path='/:slug' component={PostView} />
           </Switch>
-        </Navbar>
       </div>
     </Router>
   )
