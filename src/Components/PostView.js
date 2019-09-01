@@ -17,7 +17,7 @@ function PostView (props: PostViewProps) {
   useEffect(() => {
     const slug = match.params.slug
     axios
-      .get(`https://www.objectivetalent.com/blog/wp-json/wp/v2/posts?slug=${slug}`)
+      .get(`https://blog.objectivetalent.com/wp-json/wp/v2/posts?slug=${slug}`)
       .then(post => {
         setPost(post.data[0])
       })

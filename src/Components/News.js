@@ -14,7 +14,7 @@ function News () {
     return { __html: html }
   }
   useEffect(() => {
-    axios.get('http://blog.objectivetalent.com/wp-json/wp/v2/posts').then(posts => {
+    axios.get('https://blog.objectivetalent.com/wp-json/wp/v2/posts').then(posts => {
       setPosts(posts.data)
     })
   })
