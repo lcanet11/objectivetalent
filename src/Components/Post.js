@@ -93,11 +93,11 @@ export default function Post () {
       if (postedSuccessfully) {
         return <Alert variant='info'>
     Form submitted successfully.
-               </Alert>
+        </Alert>
       } else {
         return <Alert variant='danger'>
   Error submitting form, please try again.
-               </Alert>
+        </Alert>
       }
     }
     return alert
@@ -216,7 +216,7 @@ export default function Post () {
           <div>
             {emptyField ? <Alert variant='danger'>
             One of the form fields are empty, please make sure all required fields are filled.
-                          </Alert> : null}
+            </Alert> : null}
             {postedAlert}
             <Button type='submit' className='btn btn-primary' size='lg' disabled={emptyField} block>Submit</Button>
           </div>
