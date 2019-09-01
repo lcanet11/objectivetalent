@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Grid, Row } from 'react-bootstrap'
 import { getJobs } from '../api'
 import './styles/Jobs.css'
@@ -7,14 +7,10 @@ import styled from 'styled-components'
 const Container = styled.div`
   margin-top: 130px;
 `
+export default function Jobs () {
+  const [jobs, setJobs] = useState(null)
 
-export default class Jobs extends Component {
-  constructor (props) {
-    super(props)
-    this.state = { jobs: null }
-  }
-
-  async renderJobs () {
+  const renderJobs = async () => {
     const result = await getJobs()
     const jobsArray = result.data.jobs
     const renderMarkUp = (jobSnippet) => {
@@ -53,27 +49,20 @@ export default class Jobs extends Component {
             </Row>
           </container>
         </div>
-      </div>
-      )
+              </div>)
     })
     return jobs
   }
-  async componentDidMount () {
-    const result = await this.renderJobs()
-    this.setState({ jobs: result })
-  }
-
-  createMarkup (html) {
-    return { __html: html }
-  }
-
-  render () {
-    return (
-      <Container>
-        <Grid>
-          <div className='key-container' > {this.state.jobs} </div>
-        </Grid>
-      </Container>
-    )
-  }
+  useEffect(() => {
+    renderJobs().then(jobs => {
+      setJobs(jobs)
+    })
+  })
+  return (
+    <Container>
+      <Grid>
+        <div className='key-container'> {jobs} </div>
+      </Grid>
+    </Container>
+  )
 }

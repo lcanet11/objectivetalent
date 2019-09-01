@@ -13,9 +13,6 @@ export const getJobs = async function () {
 
 export const postJobs = async function (formData) {
   // This removes extra fields that we don't want to be posted to our backend http://perfectionkills.com/understanding-delete/
-  delete formData.emptyField
-  delete formData.postedSuccessfully
-  delete formData.isPosted
   try {
     await axios.post(`${donatelloUrl}/jobs/post`, { ...formData }, { withCredentials: true })
     return true
