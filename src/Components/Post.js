@@ -10,7 +10,7 @@ const Container = styled.div`
 `
 
 const locationType = {
-  yes: 'Yes',
+  yes: 'locationTypeYes',
   fieldLocation: 'No, the employee will be working at one of our field locations',
   clientLocation: "No, the employee will be working at a client's location"
 }
@@ -20,13 +20,13 @@ const contractType = {
   contract: 'Contract'
 }
 const emailList = {
-  yes: 'yes',
-  no: 'no',
+  yes: 'emailListYes',
+  no: 'emailListNo',
   tellMeMore: 'Tell me More'
 }
 const internalCandidate = {
-  yes: 'yes',
-  no: 'no'
+  yes: 'internalCandidateYes',
+  no: 'internalCandidateNo'
 }
 
 export default function Post () {
@@ -51,10 +51,9 @@ export default function Post () {
   const [isPosted, setIsPosted] = useState(false)
   const [postedSuccessfully, setPostedSuccessfully] = useState(false)
   const [emptyField, setEmptyField] = useState(true)
-  const checkFields = () => {
+  const checkFields = (updatedFormFields) => {
     let updatedEmptyField = false
-    map(formFields, (field) => {
-      console.log(field)
+    map(updatedFormFields, (field) => {
       if (isEmpty(field)) {
         updatedEmptyField = true
       }
@@ -64,28 +63,30 @@ export default function Post () {
   const handleCheckChange = (e) => {
     const name = e.target.name
     const id = e.target.id
+    let updatedFormFields = { ...formFields }
     if (id === 'benefits') {
-      const updatedBenefits = formFields.benefits
+      let updatedBenefits = [...formFields.benefits]
       if (!updatedBenefits.includes(name)) {
         updatedBenefits.push(name)
-        setFormFields({ ...formFields, benefits: updatedBenefits })
+      } else {
+        updatedBenefits = formFields.benefits.filter(benefit => benefit !== name)
       }
+      updatedFormFields = { ...formFields, benefits: updatedBenefits }
     } else {
-      const updatedFields = formFields
-      updatedFields[id] = name
-      setFormFields(updatedFields)
+      updatedFormFields[id] = name
     }
-    checkFields()
+    setFormFields(updatedFormFields)
+    checkFields(updatedFormFields)
   }
 
   const handleTextChange = (e) => {
     e.preventDefault()
     const name = e.target.name
     const value = e.target.value
-    const updatedFields = formFields
+    const updatedFields = { ...formFields }
     updatedFields[name] = value
     setFormFields(updatedFields)
-    checkFields()
+    checkFields(updatedFields)
   }
   const getPostedAlert = () => {
     const alert = null
@@ -117,7 +118,6 @@ export default function Post () {
   }
 
   const postedAlert = getPostedAlert()
-
   return (
     <Container>
       <Grid>
@@ -171,15 +171,15 @@ export default function Post () {
           <br />
           <ControlLabel>Location Type: is this the location where the employee will be working?</ControlLabel>
           <FormGroup className='form-control' onChange={handleCheckChange}>
-            <Checkbox id='locationType' name={locationType.yes} checked={formFields.locationType === locationType.yes} inline>Yes</Checkbox>
-            <Checkbox id='locationType' name={locationType.fieldLocation} checked={formFields.locationType === locationType.fieldLocation} inline>No, the employee will be working at one of our field locations</Checkbox>
-            <Checkbox id='locationType' name={locationType.clientLocation} checked={formFields.locationType === locationType.clientLocation} inline>No, the employee will be working at a client's location</Checkbox>
+            <Radio id='locationType' name={locationType.yes} checked={formFields.locationType === locationType.yes} inline>Yes</Radio>
+            <Radio id='locationType' name={locationType.fieldLocation} checked={formFields.locationType === locationType.fieldLocation} inline>No, the employee will be working at one of our field locations</Radio>
+            <Radio id='locationType' name={locationType.clientLocation} checked={formFields.locationType === locationType.clientLocation} inline>No, the employee will be working at a client's location</Radio>
           </FormGroup>
           <ControlLabel>Contract Type:</ControlLabel>
           <FormGroup className='form-control' onChange={handleCheckChange}>
-            <Checkbox id='contractType' name={contractType.fullTime} checked={formFields.contractType === contractType.fullTime} inline>Full-Time</Checkbox>
-            <Checkbox id='contractType' name={contractType.partTime} checked={formFields.contractType === contractType.partTime} inline>Part-Time</Checkbox>
-            <Checkbox id='contractType' name={contractType.contract} checked={formFields.contractType === contractType.contract} inline>Contract</Checkbox>
+            <Radio id='contractType' name={contractType.fullTime} checked={formFields.contractType === contractType.fullTime} inline>Full-Time</Radio>
+            <Radio id='contractType' name={contractType.partTime} checked={formFields.contractType === contractType.partTime} inline>Part-Time</Radio>
+            <Radio id='contractType' name={contractType.contract} checked={formFields.contractType === contractType.contract} inline>Contract</Radio>
           </FormGroup>
           <ControlLabel>Benefits (Check all that Apply):</ControlLabel>
           <FormGroup className='form-control' onChange={handleCheckChange}>
@@ -197,8 +197,8 @@ export default function Post () {
           </FormGroup>
           <ControlLabel>Do you have an internal candidate for this position?</ControlLabel>
           <FormGroup className='form-control' onChange={handleCheckChange}>
-            <Radio id='internalCandidate' name={internalCandidate.yes} inline>Yes</Radio>
-            <Radio id='internalCandidate' name={internalCandidate.no} inline>No</Radio>
+            <Radio id='internalCandidate' name={internalCandidate.yes} checked={formFields.internalCandidate === internalCandidate.yes} inline>Yes</Radio>
+            <Radio id='internalCandidate' name={internalCandidate.no} checked={formFields.internalCandidate === internalCandidate.no} inline>No</Radio>
           </FormGroup>
           <ControlLabel>Application link/email</ControlLabel>
           <FormControl
@@ -209,9 +209,9 @@ export default function Post () {
           />
           <ControlLabel>Are you interested in advertising through our email list?</ControlLabel>
           <FormGroup className='form-control' onChange={handleCheckChange}>
-            <Checkbox id='emailList' name={emailList.yes} checked={formFields.emailList === emailList.yes} inline>Yes</Checkbox>
-            <Checkbox id='emailList' name={emailList.no} checked={formFields.emailList === emailList.no} inline>No</Checkbox>
-            <Checkbox id='emailList' name={emailList.tellMeMore} checked={formFields.emailList === emailList.tellMeMore} inline>Tell me More</Checkbox>
+            <Radio id='emailList' name={emailList.yes} checked={formFields.emailList === emailList.yes} label='Yes' inline>Yes</Radio>
+            <Radio id='emailList' name={emailList.no} checked={formFields.emailList === emailList.no} inline>No</Radio>
+            <Radio id='emailList' name={emailList.tellMeMore} checked={formFields.emailList === emailList.tellMeMore} inline>Tell me More</Radio>
           </FormGroup>
           <div>
             {emptyField ? <Alert variant='danger'>
