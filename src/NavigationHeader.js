@@ -47,7 +47,7 @@ const ImageContainer = styled.div`
     display: block;
     width: 60px;
     height: 60px;
-    background-color: #FFD770;
+    background-color: #000000;
     text-align: center;
     align-content: center;
     align-items: center;
