@@ -3,7 +3,11 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './styles/PostView.css'
+import styled from 'styled-components'
 
+const Container = styled.div`
+  margin-top: 130px;
+`
 type PostViewProps = {
   match: {
     params: {
@@ -30,14 +34,16 @@ function PostView (props: PostViewProps) {
   let build
   if (post.title) {
     build = (
-      <div>
-        <h1 className='col-md-8 col-md-offset-3 centered' dangerouslySetInnerHTML={createMarkup(post.title.rendered)} />
-        <div
-          className='col-md-4 col-md-offset-4 centered' dangerouslySetInnerHTML={createMarkup(
-            post.content.rendered
-          )}
-        />
-      </div>
+      <Container>
+        <div>
+          <h1 className='col-md-8 col-md-offset-3 centered' dangerouslySetInnerHTML={createMarkup(post.title.rendered)} />
+          <div
+            className='col-md-4 col-md-offset-4 centered' dangerouslySetInnerHTML={createMarkup(
+              post.content.rendered
+            )}
+          />
+        </div>
+      </Container>
     )
   } else {
     build = <div />
