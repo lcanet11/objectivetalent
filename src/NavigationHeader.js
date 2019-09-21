@@ -132,8 +132,7 @@ const navData = [
     { href: 'Companies', title: 'Hiring Companies' },
     { href: 'Events', title: 'Events' },
     { href: 'News', title: 'News' },
-    { href: 'About', title: 'About Us' },
-
+    { href: 'About', title: 'About Us' }
 ]
 
 function NavigationHeader () {
