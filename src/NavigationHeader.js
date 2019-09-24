@@ -67,11 +67,11 @@ const Image = styled.img`
 `
 const HomeLink = styled.a`
     font-size: 24px;
-    color: #FFD770;
+    color: #FFE73B;
     underline: none;
     margin-top: 24px;
     &:hover {
-        color: #FFD770;
+        color: #FFE73B;
         underline: none;
         text-decoration: none;
     }
@@ -84,7 +84,7 @@ const NavBar = styled.div`
     margin-left: 56px;
     display: flex;
     flex-direction: row;
-    @media only screen and (min-width: 325px) and (max-width: 959px){
+    @media only screen and (min-width: 325px) and (max-width: 959px) {
         flex-direction: column;
         top: 0;
         align-items: center;
@@ -98,16 +98,21 @@ const NavItem = styled.div`
     margin-right: 8px;
     float: left;
     display: block;
-    color: #FFD770;
+    color: #FFE73B;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     padding-bottom: 8px;
-    border-bottom: ${(props) => props.isActive ? '3px solid #FFD770' : '3px solid transparent'};
+    border-bottom: ${(props) => props.isActive ? '3px solid #FFE73B' : '3px solid transparent'};
     &:hover {
-        color: #FFD770;
+        color: #FFE73B;
         underline: none;
         text-decoration: none;
+    }
+    @media only screen and (min-width: 325px) and (max-width: 959px) {
+        margin-bottom: 8px;
+        padding-bottom: 2px;
+        border-bottom: ${(props) => props.isActive ? '2px solid #FFE73B' : '2px solid transparent'};
     }
 `
 const NavItemLink = styled.a`
@@ -115,12 +120,12 @@ const NavItemLink = styled.a`
     margin-right: 8px;
     float: left;
     display: block;
-    color: #FFD770;
+    color: #FFE73B;
     text-align: center;
     text-decoration: none;
     font-size: 16px;    
     &:hover {
-        color: #FFD770;
+        color: #FFE73B;
         underline: none;
         text-decoration: none;
     }
@@ -162,17 +167,13 @@ function NavigationHeader () {
         )
     }
 
-    let showLogo
-    if (!displayDropdown || width >= 959) {
-        showLogo = (
+    const showLogo =
             <LogoContainer>
                 <ImageContainer>
                     <Image src={favicon} />
                 </ImageContainer>
                 <HomeLink href='Jobs'>Objective Talent</HomeLink>
             </LogoContainer>
-        )
-    }
 
     return (
         <Container displayDropdown={displayDropdown}>
