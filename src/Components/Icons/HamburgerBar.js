@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const Bar = styled.div`
     width: 35px;
     height: 5px;
-    background-color: #FFD770;
+    background-color: #FFE73B;
     margin: 6px 0;
 `
 const HamburgerBar = () => {
