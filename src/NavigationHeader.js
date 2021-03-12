@@ -19,7 +19,7 @@ const Container = styled.div`
     justify-content: flex-start;
     display: flex;
     @media only screen and (min-width: 325px) and (max-width: 959px){
-        height: ${(props) => props.displayDropdown ? '340px' : '115px'}; 
+        height: ${(props) => props.displayDropdown ? '340px' : '115px'};
     }
 `
 const IconContainer = styled.button`
@@ -40,7 +40,7 @@ const LogoContainer = styled.div`
     @media only screen and (min-width: 325px) and (max-width: 959px){
         display: flex;
         flex: 1;
-        justify-content: center;  
+        justify-content: center;
     }
 `
 const ImageContainer = styled.div`
@@ -91,7 +91,7 @@ const NavBar = styled.div`
         justify-content: center;
         margin-left: 0;
         margin-top: 60px;
-    }        
+    }
 `
 const NavItem = styled.div`
     margin-left: 8px;
@@ -123,7 +123,7 @@ const NavItemLink = styled.a`
     color: #FFE73B;
     text-align: center;
     text-decoration: none;
-    font-size: 16px;    
+    font-size: 16px;
     &:hover {
         color: #FFE73B;
         underline: none;
@@ -132,11 +132,11 @@ const NavItemLink = styled.a`
 `
 const navData = [
     { href: 'Jobs', title: 'Jobs' },
-    { href: 'Featured', title: 'Featured Jobs' },
-    { href: 'Post', title: 'Post a Job' },
+  //  { href: 'Featured', title: 'Featured Jobs' },
+  //  { href: 'Post', title: 'Post a Job' },
     { href: 'Companies', title: 'Hiring Companies' },
     { href: 'Events', title: 'Events' },
-    { href: 'News', title: 'News' },
+    { href: 'Candidates', title: 'Candidates' },
     { href: 'About', title: 'About Us' }
 ]
 

@@ -2,13 +2,13 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import './styles/News.css'
+import './styles/Candidates.css'
 import styled from 'styled-components'
 
 const Container = styled.div`
   margin-top: 130px;
 `
-function News () {
+function Candidates () {
   const [posts, setPosts] = useState()
   const createMarkup = (html) => {
     return { __html: html }
@@ -45,4 +45,4 @@ function News () {
   )
 }
 
-export default News
+export default Candidates

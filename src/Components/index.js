@@ -3,8 +3,8 @@ import Post from './Post'
 import Jobs from './Jobs'
 import Events from './Events'
 import Companies from './Companies'
-import News from './News'
+import Candidates from './Candidates'
 import PostView from './PostView'
 import Featured from './Featured'
 
-export { About, Post, Jobs, Events, Companies, News, PostView, Featured }
+export { About, Post, Jobs, Events, Companies, Candidates, PostView, Featured }

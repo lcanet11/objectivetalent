@@ -74,3 +74,6 @@ e2e/results
 # flow
 flow-coverage
 
+
+# Local Netlify folder
+.netlify

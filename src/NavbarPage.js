@@ -15,23 +15,25 @@ class NavbarPage extends React.Component {
               <a href='Jobs'>Objective Talent</a>
 
             </Navbar.Brand>
+
           </Navbar.Header>
           <Nav >
+/*
             <NavItem eventKey={2} href='Featured'>
       Featured Jobs
             </NavItem>
             <NavItem eventKey={2} href='Post'>
       Post a Job
             </NavItem>
-
+  */
             <NavItem eventKey={2} href='Companies'>
       Hiring Companies
             </NavItem>
             <NavItem eventKey={2} href='Events'>
       Events
             </NavItem>
-            <NavItem class='navbar-right' eventKey={2} href='News'>
-      News
+            <NavItem class='navbar-right' eventKey={2} href='Candidates'>
+      Candidates
             </NavItem>
             <NavItem class='navbar-right' eventKey={2} href='About'>
       About Us

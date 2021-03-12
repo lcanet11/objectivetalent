@@ -1,9 +1,10 @@
-col-md-8{
+col-md-6{
   font-size: medium;
   font-family: 'Calibri';
+  align-content:center;
 }
 
 .col-md-4{
-    margin-top: 10px;
     font-size: large;
+    align-content:center;
 }
