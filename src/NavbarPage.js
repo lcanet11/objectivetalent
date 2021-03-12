@@ -35,6 +35,9 @@ class NavbarPage extends React.Component {
             <NavItem class='navbar-right' eventKey={2} href='Candidates'>
       Candidates
             </NavItem>
+            <NavItem class='navbar-right' eventKey={2} href='News'>
+      News
+            </NavItem>
             <NavItem class='navbar-right' eventKey={2} href='About'>
       About Us
             </NavItem>

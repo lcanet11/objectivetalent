@@ -137,6 +137,7 @@ const navData = [
     { href: 'Companies', title: 'Hiring Companies' },
     { href: 'Events', title: 'Events' },
     { href: 'Candidates', title: 'Candidates' },
+    { href: 'News', title: 'News' },
     { href: 'About', title: 'About Us' }
 ]
 
