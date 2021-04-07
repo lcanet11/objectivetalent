@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import './styles/News.css'
+import Articles from './Articles'
 
 export default class News extends Component {
   render () {
     return (
       <div>
-      blah blah
-      _________________________
+        <Articles />
       </div>
     )
   }
